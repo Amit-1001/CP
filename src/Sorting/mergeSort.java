@@ -3,8 +3,8 @@ package Sorting;
 public class mergeSort {
 
     public static void main(String[] args) {
-        int[] arr1 = {1,2,3};// i < m
-        int[] arr2 = {4,5,6};//j < n
+        int[] arr1 = {1,2,3};   // i < m
+        int[] arr2 = {4,5,6};   //j < n
 //
         int m = arr1.length;
         int n = arr2.length;
