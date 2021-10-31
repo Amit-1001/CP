@@ -1,7 +1,9 @@
 package Tree;
 
 import java.awt.*;
+import java.util.ArrayDeque;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class BinaryTree {
     static Scanner in = new Scanner(System.in);
@@ -26,11 +28,11 @@ public class BinaryTree {
         BinaryTree obj = new BinaryTree();
         Node root =null;
 
-        System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder");
+
 
 
         while (true){
-            System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder");
+            System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder 5.Print Height of Tree");
             System.out.println("Enter Choice:");
             ch = in.nextInt();
             switch (ch){
@@ -49,12 +51,27 @@ public class BinaryTree {
                     System.out.println("Postorder of Tree:");
                     postorder(root);
                     break;
+
+                case 5:
+                    int height = printHeight(root);
+                    System.out.println("Height of tree is :"+height);
+                    break;
+
                 default:
                     System.out.println("Enter Valid choice");
             }
         }
     }
 
+    private static int printHeight(Node root) {
+        if(root == null){
+            return 0;
+        }
+        // we visit node left and right recursively, we keep adding +1 for each recursive call
+        // we return max
+        return Math.max(printHeight(root.left),printHeight(root.right))+1;
+
+    }
 
 
     private  Node createNode() {
