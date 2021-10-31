@@ -1,9 +1,7 @@
 package Tree;
 
 import java.awt.*;
-import java.util.ArrayDeque;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTree {
     static Scanner in = new Scanner(System.in);
@@ -32,7 +30,7 @@ public class BinaryTree {
 
 
         while (true){
-            System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder 5.Print Height of Tree");
+            System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder 5.Print Height of Tree 6.Get Inorder Traversal in As List");
             System.out.println("Enter Choice:");
             ch = in.nextInt();
             switch (ch){
@@ -57,6 +55,11 @@ public class BinaryTree {
                     System.out.println("Height of tree is :"+height);
                     break;
 
+                case 6:
+                    ArrayList<Integer> res;
+                    res = getInorderTraversal(root);
+                    System.out.println("Inorder As list:"+Arrays.toString(res.toArray()));
+                    break;
                 default:
                     System.out.println("Enter Valid choice");
             }
@@ -122,6 +125,21 @@ public class BinaryTree {
             preorder(root.right);
         }
 
+    }
+
+   public static void getInorderTraversalUtil(Node root, ArrayList<Integer> traversal) {
+        if (root == null) {
+            return;
+        }
+
+        getInorderTraversalUtil(root.left, traversal);
+        traversal.add(root.data);
+        getInorderTraversalUtil(root.right, traversal);
+    }
+    public static ArrayList<Integer> getInorderTraversal(Node root) {
+        ArrayList<Integer> traversal = new ArrayList<Integer>();
+        getInorderTraversalUtil(root, traversal);
+        return traversal;
     }
 
 }
