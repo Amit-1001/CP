@@ -8,14 +8,14 @@ public class primeTillnumber {
         int num = 23;
         boolean [] isPrime = new boolean[num+1];
 
-        Arrays.fill(isPrime,true); // initializing all value to true
+        Arrays.fill(isPrime,true); // initializing all number are prime
 
 
 
 
         for(int i = 2;i*i<=num;i++){
             if(isPrime[i]) {
-                for (int j = 2 * i; j <= num; j = j + i) { // this will find all multiple of i
+                for (int j = i * i; j <= num; j = j + i) { // this will find all multiple of i
                     // if we want to optimize even further can set j = i*i;
                     isPrime[j] = false; // marking all multiple of i as false
                 }
