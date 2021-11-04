@@ -1,4 +1,4 @@
-package Array;
+package Queue;
 
 public class queueArray {
     static int[] arr = new int[5];

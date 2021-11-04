@@ -7,7 +7,7 @@ public class balanceParanthesis {
     ArrayDeque<Integer> st;
     public static void main(String[] args) {
 
-       if(isBalanced("(())")){
+       if(isBalanced("{([])}")){
            System.out.println("It is Balanced");
        }
        else {

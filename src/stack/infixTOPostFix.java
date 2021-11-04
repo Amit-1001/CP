@@ -36,7 +36,7 @@ public class infixTOPostFix {
             }
         }
 
-        for(int i =0; i<=st.size();i++){
+        for(int i =0; i<st.size();i++){
             sb.append(st.pop());
         }
 
