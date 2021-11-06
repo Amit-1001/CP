@@ -3,6 +3,7 @@ package Array;
 import java.util.SortedMap;
 
 public class slidingWindowSumInSubArray {
+    // this problem is realted to sub array where we need to find sum in sub array
     static boolean sumFinder(int[] arr,int sum ){
         // this function does not work for negative numbers
         int current_sum = arr[0];
@@ -33,7 +34,7 @@ public class slidingWindowSumInSubArray {
     public static void main(String[] args) {
         int[] arr = {1,8,30,1,20,7};
         int k = 3; // size of consecutive array
-        int sum = 39; // sum needs to find in array
+        int sum = 21; // sum needs to find in array
 
 
         // this approach is used when k is given by user
@@ -58,7 +59,7 @@ public class slidingWindowSumInSubArray {
 //        }
 
         // in order to find sum of sub array is equal to Given sum or not use following approach
-        if(sumFinder(arr,31)){ // this function does not work for negative element
+        if(sumFinder(arr,21)){ // this function does not work for negative element
             System.out.println("sum found!!");
         }
         else {

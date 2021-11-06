@@ -3,90 +3,35 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class practice_code {
-    public static int[] twoSum(int[] nums, int target) {
 
-        int start =0;
-        int end = nums.length-1;
-        int[] res = new int[2];
-        Arrays.sort(nums);
-
-
-        while(start<end){
-            if(nums[start]+nums[end]==target){
-                res [0] = start;
-                res [1] = end;
-                break;
-            }
-            else if(nums[start]+nums[end]>target){
-                end--;
-            }
-            else{
-                start++;
-            }
-        }
-
-        return res;
-
-    }
 
     public static void main(String[] args) {
+        int[] arr = {10,15,3,7};
+        int k =22;
 
+        boolean res =findK(arr,k);
+        System.out.println(res);
+    }
 
-        String exp = "A*(B+C)/D";
+    private static boolean findK(int[] arr, int k) {
 
-        StringBuilder str = new StringBuilder();
-        Stack <Character> st = new Stack<>();
+       Arrays.sort( arr);
+       int start =0;
+       int end = arr.length-1;
 
-        for(int i = 0;i<exp.length();i++){
-            char c = exp.charAt(i);
-
-            if(checkPrecedence(c)>0){
-
-                while(st.isEmpty()== false && checkPrecedence(st.peek()) >= checkPrecedence(c) ){
-                    str.append(st.peek());
-                }
-                st.push(c);
-
-            }
-            else if(c==')'){
-                char x = st.pop();
-                while(x!='('){
-                    str.append(x);
-                    x = st.pop();
-                }
-            }
-            else if(c=='('){
-                st.push('(');
-            }
-            else{
-                str.append(c);
-            }
-        }
-
-        for(int i=0; i<st.size();i++){
-            str.append(st.pop());
-        }
-
-        String res = str.toString();
-        System.out.println(str.toString());
+       while (start<end){
+           if(arr[start]+arr[end]== k){
+               return true;
+           }
+           else if(arr[start]+arr[end]<k){
+               start++;
+           }
+           else {
+               end--;
+           }
+       }
+       return  false;
     }
 
 
-
-
-
-    public static int checkPrecedence(char c){
-        switch(c){
-            case '+':
-            case '-':
-                return 1;
-            case '*':
-            case '/':
-                return 2;
-            case '^':
-                return 3;
-        }
-
-        return -1;
-    }
 }

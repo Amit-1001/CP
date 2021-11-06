@@ -3,10 +3,10 @@ package Sorting;
 public class kthSmallest {
     public static void main (String[] args)
     {
-        int arr[] = new int[]{10,4,5,8,11,6,26};
+        int arr[] = new int[]{1,2,3,4,5};
 
         int n = arr.length;
-        int k=1;
+        int k=5;
         int index=kthSmallest(arr,n,k);
 
         System.out.print(arr[index]);

@@ -42,7 +42,7 @@ public class SumOfSubArrayFindingZeroSum {
 
 
     public static void main(String[] args) {
-        int [] arr = {6,2,3,-3};
+        int [] arr = {6,2,4,-14,10};
         int sum =0;
 
         System.out.println(sumFinder(arr));

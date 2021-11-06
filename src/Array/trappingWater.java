@@ -45,5 +45,40 @@ int n = arr.length; // size of array
     }
 
 
+    // another optimal approach
+    // used two pointer approach
+//    This problem can be solved using constant space with the help of two pointers approach.
+//
+//    Take two pointers say left and right, pointing to the start and end of the given array and do the following while left is less than or equal to right.
+//    If the array value at the left index is less than or equal to the array value at the right index then add the effective volume trapped at the left index and increment the left index.
+//    Otherwise, add the effective volume at the right index and decrement the right index.
+//     Also, keep updating the maximum height on the left and right sides to compute the effective volume at each index.
+
+
+
+//    int volumeOfTrappedRainWater(int[] heights) {
+//        int left = 0;
+//        int right = heights.length - 1;
+//        int volume = 0;
+//        int maxLeft = 0, maxRight = 0;
+//        while (left <= right) {
+//            if (heights[left] <= heights[right]) {
+//                if (heights[left] >= maxLeft) {
+//                    maxLeft = heights[left];
+//                } else {
+//                    volume += maxLeft - heights[left];
+//                }
+//                left++;
+//            } else {
+//                if (heights[right] >= maxRight) {
+//                    maxRight = heights[right];
+//                } else {
+//                    volume += maxRight - heights[right];
+//                }
+//                right--;
+//            }
+//        }
+//        return volume;
+//    }
     ///
 }
