@@ -50,11 +50,11 @@ public class reverseLinkedList {
 
         list.printList();
 
-        naiveReverse();
+       // naiveReverse();
 
-        System.out.println("After Reverse Linked list:");
+       // System.out.println("After Reverse Linked list:");
 
-        list.printList();
+       // list.printList();
 
         System.out.println("Efficient Solution:");
         efficientReverse();
@@ -62,11 +62,11 @@ public class reverseLinkedList {
         printList();
         int k = 2;
 
-        System.out.println("Reverse by group of :"+k);
+        //System.out.println("Reverse by group of :"+k);
 
-        list.reverseByK(k);
+       // list.reverseByK(k);
 
-        printList();
+       // printList();
 
 
     }

@@ -1,4 +1,4 @@
-package Array;
+package stack;
 
 public class stackArray {
     static int[] arr = new int [100];

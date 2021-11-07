@@ -11,7 +11,7 @@ public class stringSubset {
         }
         printSub(str, curr+str.charAt(index), index + 1); // here we are taking current character
         //System.out.println("index value after above recursion"+index);
-        printSub(str, curr, index + 1); // here we are not taking current character
+        printSub(str, curr+"_", index + 1); // here we are not taking current character
 
     }
     public static void main(String[] args) {

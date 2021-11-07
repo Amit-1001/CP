@@ -14,8 +14,10 @@ public class stringPalindrome {
     public static void main(String[] args) {
         String str = "abba";
         int start = 0;
-        int end = str.length();
+        int end = str.length()-1;
 
+
+        System.out.println(isPalindrome(str,start,end));
 
     }
 }
