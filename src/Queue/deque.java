@@ -1,17 +1,16 @@
 package Queue;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.*;
 
 public class deque {
     public static void main(String[] args) {
         // Array deque is implement Queue functionality as well
         ArrayDeque<Integer> d = new ArrayDeque<>();
+        Stack<Integer> st  = new Stack<>();
 
         d.add(10); // add is used in QUEUE
         d.add(20);
-
+        Queue<Integer> q = new ArrayDeque<>();
         d.addFirst(5); // these two functionality are of Deque we can add first and last position
         d.addLast(30); // this functionality throw exception
         d.poll(); // remove from first

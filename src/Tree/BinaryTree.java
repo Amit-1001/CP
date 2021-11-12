@@ -7,9 +7,9 @@ public class BinaryTree {
     static Scanner in = new Scanner(System.in);
 
     public class Node{
-         public Node left;
-         public Node right;
-         public int data;
+        Node left;
+        Node right;
+         int data;
         Node(int data){
             this.data = data;
              left = null;
@@ -30,7 +30,7 @@ public class BinaryTree {
 
 
         while (true){
-            System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder 5.Print Height of Tree 6.Get Inorder Traversal in As List");
+            System.out.println("1.Insert in Binary Tree 2.Display Inorder 3.Display Preorder 4.Display Postorder 5.Print Height of Tree 6.Get Inorder Traversal in As List 7.Size of Binary Tree");
             System.out.println("Enter Choice:");
             ch = in.nextInt();
             switch (ch){
@@ -60,6 +60,9 @@ public class BinaryTree {
                     res = getInorderTraversal(root);
                     System.out.println("Inorder As list:"+Arrays.toString(res.toArray()));
                     break;
+
+                case 7:
+                    System.out.println("Size of binary tree is :"+sizeOfTree(root));
                 default:
                     System.out.println("Enter Valid choice");
             }
@@ -131,15 +134,28 @@ public class BinaryTree {
         if (root == null) {
             return;
         }
-
+        // Inorder recursive calls
+       // left root right
+       // root will be added to traversal list
         getInorderTraversalUtil(root.left, traversal);
         traversal.add(root.data);
         getInorderTraversalUtil(root.right, traversal);
+
     }
     public static ArrayList<Integer> getInorderTraversal(Node root) {
-        ArrayList<Integer> traversal = new ArrayList<Integer>();
+        ArrayList<Integer> traversal = new ArrayList<Integer>(); // store result
         getInorderTraversalUtil(root, traversal);
-        return traversal;
+        return traversal; // inorder result
+    }
+
+
+    public static int sizeOfTree(Node root){
+        if(root == null){
+            return 0;
+        }
+        else{
+            return 1+(sizeOfTree(root.left)+sizeOfTree(root.right));
+        }
     }
 
 }

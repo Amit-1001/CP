@@ -13,8 +13,8 @@ public class searchSortedRotatedArray {
             }
 
 
-            if(arr[start]<arr[mid]){ // this condition check if left half of array is sorted or not
-                if(data>=arr[start] && data < arr [mid]){ // this check if data is in between of start and middle element
+            if(arr[start]<=arr[mid]){ // this condition check if left half of array is sorted or not
+                if(data>=arr[start] && data <= arr [mid]){ // this check if data is in between of start and middle element
                     end = mid-1; // check in left half
                 }
                 else {
@@ -23,7 +23,7 @@ public class searchSortedRotatedArray {
             }
             
             else { // this check if right half of array is sorted
-                if(data> arr[mid] && data <=arr[end]){ // this check if data is in between middle and end element
+                if(data>= arr[mid] && data <=arr[end]){ // this check if data is in between middle and end element
                     start = mid+1; // check in right half
                 }
                 else {
@@ -39,8 +39,8 @@ public class searchSortedRotatedArray {
 
 
     public static void main(String[] args) {
-        int[] arr ={10,20,30,40,50,60,5,8};
+        int[] arr ={3,1};
 
-        System.out.println("Element present at:"+findNumber(arr,5));
+        System.out.println("Element present at:"+findNumber(arr,1));
     }
 }
