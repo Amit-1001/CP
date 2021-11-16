@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 public class stringSubset {
 // time complexity is 2^n

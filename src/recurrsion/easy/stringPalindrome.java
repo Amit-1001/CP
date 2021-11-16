@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 public class stringPalindrome {
     // time complexity is O(n)

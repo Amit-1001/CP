@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 public class countDigits {
     static int count(int n){

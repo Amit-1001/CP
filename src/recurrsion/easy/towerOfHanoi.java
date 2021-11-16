@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 public class towerOfHanoi {
     static void ToH(int n, char A, char B, char C)

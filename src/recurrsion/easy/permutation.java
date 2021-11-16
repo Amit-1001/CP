@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 public class permutation {
     public static void main(String[] args) {

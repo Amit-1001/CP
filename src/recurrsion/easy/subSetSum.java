@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 public class subSetSum {
     static int countSet(int []arr,int n,int sum){

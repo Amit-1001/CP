@@ -1,4 +1,4 @@
-package recurrsion;
+package recurrsion.easy;
 
 import java.util.ArrayList;
 

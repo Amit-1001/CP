@@ -2,7 +2,7 @@ package Array;
 
 public class secondLargest {
     public static void main(String[] args) {
-        int[] arr = {10,30,20,50};
+        int[] arr = {10,30,20,50,30};
         int res =-1;
         int largest=0;// first large element index
 
