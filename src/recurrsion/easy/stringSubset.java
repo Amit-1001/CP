@@ -1,5 +1,7 @@
 package recurrsion.easy;
 
+import java.util.ArrayList;
+
 public class stringSubset {
 // time complexity is 2^n
     static void printSub(String str, String curr, int index)
@@ -18,5 +20,26 @@ public class stringSubset {
         String str = "ABC";
         printSub(str,"",0);
 
+        ArrayList<String> res = new ArrayList<>();
+        res = anotherPrintSub(str,"");
+        System.out.println("Subset of String:");
+        System.out.println(res);
+    }
+
+    private static ArrayList<String> anotherPrintSub(String str, String s) {
+            if(str.isEmpty()){
+                ArrayList<String> res = new ArrayList<>();
+                res.add(s);
+                return  res;
+            }
+
+            char c = str.charAt(0);
+            String repeat = str.substring(1);
+
+            ArrayList<String> result = new ArrayList<>();
+            result.addAll(anotherPrintSub(repeat,s+c)); // taking one character
+            result.addAll(anotherPrintSub(repeat,s+"_")); // not taking one character
+
+        return result;
     }
 }
