@@ -5,7 +5,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Stack;
 
-public class infixToPrefix {
+public class
+infixToPrefix {
    private static Stack<Character> st = new Stack<>();
    private static StringBuilder sb = new StringBuilder();
    // private  static ArrayList<Character> sb = new ArrayList<>();

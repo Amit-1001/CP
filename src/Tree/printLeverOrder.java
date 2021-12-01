@@ -26,6 +26,8 @@ public class printLeverOrder {
         Queue<Node> q = new ArrayDeque<>();
         q.add(root); // push first root at queue
         while(!q.isEmpty()){
+
+
             Node curr = q.poll(); // peek first element which is first node in queue
             System.out.println(curr.data); // print data
             if(curr.left!=null){

@@ -17,20 +17,20 @@ public class subsetOfArray {
 
         StringBuilder sb = new StringBuilder();
 
-        for(int i = 0; i < limit; i++){
-            int dec = i;
+        for(int i = 0; i < limit; i++){ // this will contain number like 0 , 1, 2 , 3, 4, ..... n
+            int dec = i; // taking number one by one from limits to find binary of these elements
             String str = "";
 
-            for(int j = 0; j < arr.length; j++){ // finding binary will size of arr for each number of i
-                int r = dec % 2;
+            for(int j = arr.length-1; j >=0; j--){ // starting loop from end of array to take last element first
+                int r = dec % 2; // finding reminder of dec to get binary
                 dec = dec / 2;
 
-                if(r == 0){
+                if(r == 0){ // if reminder is 0 print nothing
 
                     str = "-\t" + str;
 
                 } else {
-                    str = arr[ arr.length-j-1 ] + "\t" + str;
+                    str = arr[ j ] + "\t" + str; // if reminder is 1 print jth number from array
                     // arr[arr.length-j-1] will take last element from arr
                     // to start from first type arr[j]
                 }

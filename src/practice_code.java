@@ -1,3 +1,5 @@
+import com.sun.source.tree.Tree;
+
 import java.lang.management.ManagementFactory;
 import java.sql.SQLOutput;
 import java.util.*;
@@ -5,46 +7,42 @@ import java.util.*;
 public class practice_code {
 
 
+
+
     public static void main(String[] args) {
-       int[] arr = {1,0,2,3,0};
-       int index=arr.length-1;
-       for(int i =arr.length-1; i>=0; i--){
-           if(arr[i]==0){
-               swap(arr,i,index);
-               index--;
-           }
-       }
+        Scanner  in = new Scanner(System.in);
+        Stack <Character> st = new Stack<Character>();
+        String str = in.nextLine();
 
+        if(str.isEmpty()){
+            System.out.println("true");
+            return;
+        }
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(str.charAt(str.length()-1));
+
+        for(int i = str.length()-1;i>=0;i--){
+            char c = str.charAt(i);
+            if(c == '(' || c == '{' || c == '['){
+
+                if(c == st.peek()){
+                    st.pop();
+                }
+            }else if( c==')' || c == '}' || c== ']'){
+                st.push(c);
+            }
+        }
+
+        if(!st.isEmpty()){
+            System.out.println("false");
+        }
+        else {
+            System.out.println("true");
+        }
 
     }
 
-    private static void swap(int[] arr,int i, int index) {
-            int temp = arr[i];
-            arr[i] = arr[index];
-            arr[index] = temp;
-    }
 
-    private static boolean findK(int[] arr, int k) {
-
-       Arrays.sort( arr);
-       int start =0;
-       int end = arr.length-1;
-
-       while (start<end){
-           if(arr[start]+arr[end]== k){
-               return true;
-           }
-           else if(arr[start]+arr[end]<k){
-               start++;
-           }
-           else {
-               end--;
-           }
-       }
-       return  false;
-    }
 
 
 }

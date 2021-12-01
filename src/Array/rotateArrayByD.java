@@ -48,14 +48,15 @@ public class rotateArrayByD {
 //        if(k<0){ // when k is negative
 //            k =k+a.length;
 //        }
+//          int start =0;
+//           int end = a.length-1;
 //
 //
+//        reverse(a,0,end-k); // starting till first k elements are reversed;
 //
-//        reverse(a,0,a.length-k-1);
+//        reverse(a,end-k+1,end); // from k+1 till last element all element are reversed;
 //
-//        reverse(a,a.length-k,a.length-1);
-//
-//        reverse(a,0,a.length-1);
+//        reverse(a,0,end); // starting till end element are reversed
 
 
     }
