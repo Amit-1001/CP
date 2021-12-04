@@ -40,10 +40,10 @@ public class maze {
             }
 
             if(c < maze[0].length-1){
-              path.addAll(  printPath(maze,r,c+1,s+"R"));
+              path.addAll( printPath(maze,r,c+1,s+"R"));
             }
             if(r>0){
-                path.addAll(    printPath(maze,r-1,c,s+"U"));
+                path.addAll(printPath(maze,r-1,c,s+"U"));
             }
             if(c>0){
                path.addAll( printPath(maze,r,c-1,s+"L"));

@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class maze {
+public class  maze {
     // return all possible path from a to b
 
 //     3 2 1    // consider this as matrix we are starting from (3,3) and we have to find path till (1,1)
