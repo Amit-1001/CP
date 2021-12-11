@@ -35,11 +35,13 @@ public class longestSubArrayWithSum {
         int[] arr = {5,8,-4,-4,9,-2};
 
         int max =0;
-        int sum = 0;
+        int sum = 0; // sum should be equal to zero
         int pre_sum = 0;
         int result = 0;
 
         Map<Integer,Integer> m = new HashMap<>();
+        HashSet<Integer> hs = new HashSet<>();
+
 
         for(int i =0 ; i< arr.length;i++){
             pre_sum +=arr[i];
