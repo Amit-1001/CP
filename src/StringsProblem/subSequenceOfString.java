@@ -1,4 +1,4 @@
-package Array;
+package StringsProblem;
 
 public class subSequenceOfString {
     public static void main(String[] args) {

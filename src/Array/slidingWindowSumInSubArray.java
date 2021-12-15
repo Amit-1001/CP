@@ -3,7 +3,7 @@ package Array;
 import java.util.SortedMap;
 
 public class slidingWindowSumInSubArray {
-    // this problem is realted to sub array where we need to find sum in sub array
+    // this problem is related to sub array where we need to find sum in sub array
     static boolean sumFinder(int[] arr,int sum ){
         // this function does not work for negative numbers
         int current_sum = arr[0];
