@@ -1,5 +1,5 @@
 package Tree;
-import Tree.BT; // BT is class which is used to create binary tree all code to create binary tree is written in BT
+
 public class maxInBinaryTree {
 
 

@@ -26,8 +26,6 @@ public class printLeverOrder {
         Queue<Node> q = new ArrayDeque<>();
         q.add(root); // push first root at queue
         while(!q.isEmpty()){
-
-
             Node curr = q.poll(); // peek first element which is first node in queue
             System.out.println(curr.data); // print data
             if(curr.left!=null){
@@ -90,27 +88,21 @@ public class printLeverOrder {
             }
 
             Queue<Node> q = new ArrayDeque<>();
-
             q.add(root);
-
             while(q.isEmpty() == false){
                 int count = q.size();
-
                 for(int i = 0; i< count; i++){
                     Node curr  = q.poll(); // poll return and remove the front of queue
-
                     System.out.print(curr.data+" ");
                     if(curr.left!=null) {
                         q.add(curr.left);
                     }
-
                     if(curr.right!=null){
                         q.add(curr.right);
                     }
                 }
                 System.out.println();
             }
-
     }
 
 }

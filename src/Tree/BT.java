@@ -2,10 +2,8 @@ package Tree;
 
 import java.util.Scanner;
 
-public class BT {
+public class  BT {
    static Scanner in = new Scanner(System.in);
-
-
 
     public class Node{
         Node left;
@@ -17,8 +15,6 @@ public class BT {
             left = null;
             right = null;
         }
-
-
 
     }
 

@@ -2,7 +2,6 @@ package Tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.WeakHashMap;
 
 public class printLeftView {
 int max =0;
@@ -56,7 +55,7 @@ int max =0;
         }
     }
 
-    public void printLeft(BT.Node root,int level){
+    public void printLeft(BT.Node root, int level){
         if (root == null ) {
             return;
         }

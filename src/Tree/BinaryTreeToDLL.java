@@ -1,5 +1,7 @@
 package Tree;
 
+import Tree.BT;
+
 public class BinaryTreeToDLL {
     static DLL head;
     static DLL tail;
