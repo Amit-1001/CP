@@ -1,4 +1,4 @@
-package BacktTracking;
+package recurrsion;
 
 import java.util.Scanner;
 
@@ -20,6 +20,7 @@ public class mazePathWithJumps {
 
         if(sr==dr && sc==dc){
             System.out.println(psf);
+            return;
         }
 
         for(int step = 1; step <= dc-sc;step++){ // going column wise

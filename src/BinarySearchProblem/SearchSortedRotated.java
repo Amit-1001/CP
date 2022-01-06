@@ -11,16 +11,16 @@ public class SearchSortedRotated {
         System.out.println("Found at postion:"+res);
     }
 
-    private static int findPosition(int[] arr, int i) {
+    private static int findPosition(int[] arr, int data) {
         int size =arr.length;
         int pivot = getPivot(arr,size);
 
-        if(i >= arr[pivot] && i <= arr[size-1]){
+        if(data >= arr[pivot] && data <= arr[size-1]){
             // if pivot is less than given number and less than size of array it means we need to search in right side of array
-            return binarySearch(arr,pivot,size-1,i); // move in left side array
+            return binarySearch(arr,pivot,size-1, data); // move in right side array
         }
         else{
-            return  binarySearch(arr, 0 , pivot-1,i); // move in right side array
+            return  binarySearch(arr, 0 , pivot-1, data); // move in left side array
         }
 
     }

@@ -65,12 +65,29 @@ public class stairCase {
 //        ArrayList<String> patter3=getStairResult(n-3,s+3);
 //
 //        ArrayList<String> result = new ArrayList<>();
-//
-//        result.addAll(patter1);
+
+//         result.addAll(patter1);
 //        result.addAll(patter2);
 //        result.addAll(patter3);
 //        return result;
 //
 //    }
+//
+
+                                                   /**  This is without extra string s
+                                                    for(String path : path1){
+                                                    res.add(1+path);
+                                                    }
+
+                                                    for(String path : path2){
+                                                    res.add(2+path);
+                                                    }
+
+                                                    for(String path : path3){
+                                                    res.add(3+path);
+                                                    }
+
+                                                      **/
+
 
 }

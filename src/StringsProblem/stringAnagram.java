@@ -12,7 +12,7 @@ public class stringAnagram {
             char c = a.charAt(i);
             isAnagram = false;
             for(int j = 0; j< b.length(); j++){
-                if(b.charAt(j) == c && !Visited[j]){ // if char is not visited
+                if(b.charAt(j) == c && !Visited[j]){ // if char is not visited && if c is found in b
                     isAnagram = true;
                     Visited[j] = true;
                     break;

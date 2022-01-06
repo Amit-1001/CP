@@ -28,11 +28,12 @@ public class subSequenceOfString {
                 char ch = str.charAt(0);
                 String repeat  = str.substring(1);
 
-                ArrayList<String> left = printSubSequence(repeat,s);
-                ArrayList<String> right = printSubSequence(repeat,s+ch);
 
-                left.addAll(right);
-                return  left;
+                ArrayList<String> right = printSubSequence(repeat,s+ch);
+                 ArrayList<String> left = printSubSequence(repeat,s);
+
+                right.addAll(left);
+                return  right;
      }
 
     static void printSs(String str, String ans) {
