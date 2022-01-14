@@ -9,7 +9,7 @@ public class infixTOPostFix {
     private static  StringBuilder sb = new StringBuilder();
     private static Stack<Character> st = new Stack<>();
     public static void main(String[] args) {
-        String str = "(A+B)*(C^D-E)";
+        String str = "(1)+8";
 
         for(int i=0; i<str.length();i++){
             char c = str.charAt(i);
@@ -36,7 +36,7 @@ public class infixTOPostFix {
             }
         }
 
-        for(int i =0; i<st.size();i++){
+        for(int i =0; i<=st.size();i++){
             sb.append(st.pop());
         }
 

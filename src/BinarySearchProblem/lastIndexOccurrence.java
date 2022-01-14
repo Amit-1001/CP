@@ -1,4 +1,4 @@
-package search;
+package BinarySearchProblem;
 
 public class lastIndexOccurrence {
 

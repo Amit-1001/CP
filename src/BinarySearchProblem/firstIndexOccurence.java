@@ -1,4 +1,4 @@
-package search;
+package BinarySearchProblem;
 
 public class firstIndexOccurence {
     static int firstOccurrence(int[] arr, int key){

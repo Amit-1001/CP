@@ -11,8 +11,6 @@ public class mergeSortAlgorithm {
         mergeSort(arr,start,end);
 
         System.out.println(Arrays.toString(arr));
-
-
     }
 
     static void merge(int arr[], int start, int mid, int end){

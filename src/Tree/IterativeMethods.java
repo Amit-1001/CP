@@ -15,7 +15,7 @@ public class IterativeMethods {
     }
 
     private static void Ipostorder(BT.Node head) {
-
+    // left right root
         Stack<BT.Node> st =new Stack<>();
 
        BT.Node temp;
