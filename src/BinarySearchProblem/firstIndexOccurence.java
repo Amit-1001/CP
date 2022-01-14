@@ -27,7 +27,7 @@ public class firstIndexOccurence {
                 }
             }
         }
-        return 0;
+        return -1;
 
     }
     public static void main(String[] args) {
