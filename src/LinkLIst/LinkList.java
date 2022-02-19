@@ -4,10 +4,10 @@ import java.util.List;
 
 public class LinkList {
    static Node head;
-    static class Node{
-        int data;
-        Node next;
-        Node(int d){
+    public static class Node{
+        public int data;
+        public Node next;
+        public Node(int d){
           data = d;
           next = null;
 
