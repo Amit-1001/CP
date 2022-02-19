@@ -30,7 +30,15 @@ public class PractiseCode {
 
 
     public static void main(String[] args) {
+        String[] names = new String[3];
+        Scanner in = new Scanner(System.in);
+        for(int i=0;i<3;i++){
+            names[i]  = in.nextLine();
+        }
 
+        for(String a:names){
+            System.out.println(a);
+        }
 
     }
 }
