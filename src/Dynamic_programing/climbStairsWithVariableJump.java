@@ -30,27 +30,59 @@ public class climbStairsWithVariableJump {
     // Ans : 5
 
      */
+public static void main(String[] args) throws Exception {
+    // write your code here
+    Scanner in = new Scanner(System.in);
+    int n= in.nextInt();
 
-    // this is tabular approach
-    public static void main(String[] args) {
-        Scanner in =new Scanner(System.in);
-        int n = in.nextInt();
-        int[] dp = new int[n+1];
+    int[] arr = new int[n];
 
-        int[] arr = new int[n];
-        for(int i=0;i<n;i++){
-            arr[i] = in.nextInt();
-        }
-
-        dp[n] = 1; // we are staring from end of array that is why there are only 1 path to reach end;
-        // then we try add this path to n-1;
-
-        for(int i=n-1;i>=0;i--){
-            for(int j=1;j<=arr[i] && i+j<dp.length ;j++){ // we are staring from j=1 cause there will arr[i] number of ways to reach end
-                dp[i] = dp[i]+dp[i+j]; // we add current ways and all way so far found in dp;
-            }
-        }
-
-        System.out.println("Possible ways to end with Variable jump is:"+dp[0]);
+    for(int i=0; i<n; i++){
+        arr[i] = in.nextInt();
     }
+
+    int[] dp = new int[n];
+
+    int ans = climbStairsWithVJ(0,n,arr);
+
+    //int ans = climbStairsWithVJMemorization(0,n,arr,dp);
+
+    System.out.println("Different paths:"+ans);
+}
+
+
+    // normal recurrsion
+    public static int climbStairsWithVJ(int src, int des, int[] arr){
+        if(src == des){
+            return 1;
+        }
+
+        int count =0;
+
+        for(int jump = 1; jump<=arr[src] && jump + src <= des; jump++ ){
+            count += climbStairsWithVJ(src+jump, des,arr);
+        }
+
+        return count;
+    }
+
+    // with Memorization techniques
+    public static int climbStairsWithVJMemorization(int src, int des, int[] arr, int[] dp){
+        if(src == des){
+            return dp[src] = 1; // storing 1 as one of paths of src
+        }
+
+        if(dp[src]!=0){
+            return dp[src];
+        }
+
+        int count =0;
+
+        for(int jump = 1; jump<=arr[src] && jump + src <= des; jump++ ){
+            count += climbStairsWithVJ(src+jump, des,arr);
+        }
+
+        return dp[src] = count; // storing all paths of src position
+    }
+
 }
