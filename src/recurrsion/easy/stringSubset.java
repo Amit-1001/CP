@@ -17,15 +17,29 @@ public class stringSubset {
 
     }
     public static void main(String[] args) {
-        String str = "ABC";
+        String str = "ABCC";
         printSub(str,"",0);
 
         ArrayList<String> res = new ArrayList<>();
         res = anotherPrintSub(str,"");
-        System.out.println("Subset of String:");
+        System.out.println("Subsequence of String:");
         System.out.println(res);
+
+        System.out.println("Subset of string using loops");
+        printSubsetUsingLoops(str);
     }
 
+    // this is subset finding method
+    private static void printSubsetUsingLoops(String str) {
+        for(int i=0; i<str.length();i++){
+            for(int j = i; j<str.length();j++){
+                String sub = str.substring(i,j+1);
+                System.out.println(sub);
+            }
+        }
+    }
+
+    // this is subsequence finding method
     private static ArrayList<String> anotherPrintSub(String str, String s) {
             if(str.isEmpty()){
                 ArrayList<String> res = new ArrayList<>();

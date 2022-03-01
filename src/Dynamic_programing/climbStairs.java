@@ -10,77 +10,111 @@ public class climbStairs {
 //4. You are required to print the number of different paths via which you can climb to the top.
 
 
-    static  int[] memorization;
-    static int[] tabular;
-    public static void main(String[] args) {
+    // with simple recurrsion
+    public static int findCountOfStairs(int n){
+        if( n == 0){
+            return 1; // if n ==0 which means we have reached final step so this is one of possible answer
+        }
+
+        int count =0;
+
+        // n-1, n-2, n-3 only three steps are allowed to climb 1,2,3
+        if(n-1>=0){
+            count += findCountOfStairs(n-1);
+        }
+        if(n-2>=0){
+            count += findCountOfStairs(n-2);
+        }
+        if(n-3>=0){
+            count += findCountOfStairs(n-3);
+        }
+
+        return count;
+
+    }
+
+    // using memorization
+    public static int findCountOfStairsMem(int n, int[] dp){
+        if(n==0){
+            return dp[n] =1; // storing one possible answer
+        }
+
+        if(dp[n]!=0){
+            return dp[n];
+        }
+
+        int count =0;
+        // if(n-1>=0){
+        //     count+= findCountOfStairsMem(n-1,dp);
+        // }
+        // if(n-2>=0){
+        //      count+= findCountOfStairsMem(n-2,dp);
+        // }
+        // if(n-3>=0){
+        //      count+= findCountOfStairsMem(n-3,dp);
+        // }
+
+        //using for loop
+        for(int jump=1; jump<=3 &&  n-jump>=0; jump++){ // n-jump>=0 is handling all negative jumps
+            count += findCountOfStairsMem(n-jump,dp);
+        }
+
+        dp[n] = count;
+
+        int noOfPath = dp[n];
+
+        return noOfPath;
+    }
+
+
+    // to convert into tabulation
+    public static int countPathTabulation(int N , int[] dp){
+
+        // if(dp[n]!=0){
+        //     return dp[n]; // if path is already counted then return count
+        // }
+
+        for(int n =0; n<dp.length; n++){
+
+            if(n==0){
+                dp[n] =1; // if path reached zero then add 1 to nth position
+                continue;
+            }
+            int count = 0; // for counting path
+
+            if(n-1>=0){
+                count += dp[n-1];//countPath(n-1,dp);
+            }
+            if(n-2>=0){
+                count += dp[n-2];//countPath(n-2,dp);
+            }
+            if(n-3>=0){
+                count += dp[n-3];//countPath(n-3,dp);
+            }
+            dp[n] = count; // storing one successful path at nth position
+            // int path = dp[n]; // this is last count of all possible path count's to reached end
+        }
+
+        int paths = dp[N]; // final answer
+
+        return paths;
+    }
+
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
         Scanner in = new Scanner(System.in);
 
         int n = in.nextInt();
 
-        memorization = new int[n+1];
-        tabular = new int[n+1];
-        Arrays.fill(memorization,-1);
-
-        int res = countStairs_memorization(n);
-
-        System.out.println("Using memorization path count is:"+res);
-
-        int res1 = countStairs_tabular(n);
-
-        System.out.println("Using tabulation path count is:"+res1);
-
-    }
-
-    private static int countStairs_tabular(int n) {
-        // this is another approach to solve DP problem
-
-        // In tabular approach we are storing path count of each step
-        // like for n =0 path count is 1 it will store at 0
-        // like for n=1 path count is 1 it will store at 1
-        // for n = 2 path count is  2 it will store at 2
-        // for n = 3 path count is 4 it will store at 3;
-
-
-        tabular[0] = 1;
-
-        for(int i=1;i<=n;i++){
-            if(i==1){
-                tabular[i] = tabular[i-1]; // i-2 and i-3 will become negative
-            }
-            else if( i==2){
-                tabular[i]  = tabular[i-1] + tabular[i-2]; // we didn't use i-3 because i will become negative
-            }
-
-            // above two condition  used to handle negative path
-            else {
-                tabular[i]  = tabular[i-1] + tabular [i-2] + tabular[i-3]; // here we are using i-1 , i-2 , i-3 because we can only 1 step , 2 step , and 3 step at time
-            }
-        }
-        return tabular[n];
+        //int res = findCountOfStairs(n);
+        int[] dp = new int[n+1];
+        //int res = findCountOfStairsMem(n,dp);
+        int res = countPathTabulation(n,dp);
+        System.out.println("Stairs count:"+res);
     }
 
 
-    private static int countStairs_memorization(int n) {
 
-        if(n==0){
-            return 1;
-        }
-        else if( n < 0){
-            return  0;
-        }
 
-        if(memorization[n]>0){ // if any path count of n is already present return that path
-            return memorization[n];
-        }
-
-        int res1 = countStairs_memorization(n-1); // all path using step 1;
-        int res2 = countStairs_memorization(n-2); // all path using step 2;
-        int res3 = countStairs_memorization(n-3); // all path using step 3;
-
-        int path = res1+res2+res3; // all path count;
-
-        memorization[n] = path; // storing path count of n
-
-        return path; // all possible path count
-    }
 }
