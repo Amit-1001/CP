@@ -52,6 +52,7 @@ public class mazePathWithMinimumCost {
                 3. Traverse and store
             */
         // in this problem we will be traversing array from end of array as we want to find mimum cost
+        // this is tabulation
         for(int i=arr.length-1; i>=0;i--){
             for(int j=arr[0].length-1;j>=0;j--){
 
