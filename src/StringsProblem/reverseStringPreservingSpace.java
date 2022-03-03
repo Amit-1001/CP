@@ -3,6 +3,11 @@ package StringsProblem;
 import java.util.Scanner;
 
 public class reverseStringPreservingSpace {
+
+/**
+ *     Input : "intern at geeks"
+ *     Output : skeegt an retni
+ * */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String str = "Amit Nitnaware";
