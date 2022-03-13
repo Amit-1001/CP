@@ -20,5 +20,7 @@ public class previousGreater {
             System.out.print(" "+ele);
             st.push(i); // pushing new element to stack
         }
+
+
     }
 }
