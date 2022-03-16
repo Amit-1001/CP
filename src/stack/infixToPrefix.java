@@ -45,6 +45,8 @@ infixToPrefix {
         sb.reverse();
         System.out.println(sb.toString());
 
+
+
     }
 
     private static int checkPrecedence(char c) {
