@@ -1,5 +1,7 @@
 package StringsProblem;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +21,7 @@ public class longestHitPattern {
         }
 
         System.out.println("Max Length of HIT :"+max);
+
 
     }
 }

@@ -1,33 +1,40 @@
 package StringsProblem;
 
+import java.util.Scanner;
+
 public class stringAnagram {
     public static void main(String[] args) {
-        String a = "abc";
-        String b = "cab";
-        boolean isAnagram = false;
 
-        boolean[] Visited = new boolean[b.length()]; // this array is used to keep note of visited character
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
 
-        for(int i = 0 ; i < a.length(); i++){
-            char c = a.charAt(i);
-            isAnagram = false;
-            for(int j = 0; j< b.length(); j++){
-                if(b.charAt(j) == c && !Visited[j]){ // if char is not visited && if c is found in b
-                    isAnagram = true;
-                    Visited[j] = true;
+        while(t--!=0) {
+            String a = in.next();
+            String b = in.next();
+            boolean isAnagram = false;
+
+            boolean[] Visited = new boolean[b.length()]; // this array is used to keep note of visited character
+
+            for (int i = 0; i < a.length(); i++) {
+                char c = a.charAt(i);
+                isAnagram = false;
+                for (int j = 0; j < b.length(); j++) {
+                    if (b.charAt(j) == c && !Visited[j]) { // if char is not visited && if c is found in b
+                        isAnagram = true;
+                        Visited[j] = true;
+                        break;
+                    }
+                }
+                // no match found loop will break
+                if (!isAnagram) {
                     break;
                 }
             }
-            // no match found loop will break
-            if(!isAnagram){
-                break;
+            if (isAnagram) {
+                System.out.println("Yes");
+            } else {
+                System.out.println("No");
             }
-        }
-        if (isAnagram){
-            System.out.println("Anagram");
-        }
-        else {
-            System.out.println("Not Anagram");
         }
     }
 }

@@ -41,7 +41,7 @@ public class LongestSubsequenceOfConsecutive_numbers {
 
 
     public static void main(String[] args) {
-        int[] arr = {1,2,2,4,5,3,12,19,6};
+        int[] arr = {10,9,2,5,3,7,101,18};
 
         System.out.println("Longest Subsequence:"+longestConsecutive(arr));
     }

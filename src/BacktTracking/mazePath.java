@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class mazePath {
-
-
-
     public static void main(String[] args){
         boolean[][] board = {{true,true,true},
                             {true,true,true},
