@@ -1,3 +1,5 @@
+package CoreJava.Comparable_and_Comparator;
+
 import CoreJava.Comparable_and_Comparator.Employee;
 import CoreJava.Comparable_and_Comparator.salaryComparator;
 import CoreJava.Lamda.LamdaUse;
@@ -23,7 +25,7 @@ public class Main {
         }
 
         // comparator user
-        Collections.sort(l,new salaryComparator()); // sorting based on last name
+        Collections.sort(l,new lastNameComparator()); // sorting based on last name
         System.out.println("\nLast name sort\n");
 
         for(Employee e : l){
@@ -33,6 +35,13 @@ public class Main {
 
         System.out.println("==========================");
         LamdaUse.info();
+
+        List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 3);
+        numbers.sort((a,b) -> a - b);
+        System.out.println(numbers);
+        numbers.stream().filter(n -> n%2!=0).forEach(System.out::println);
+
+
 
 
     }

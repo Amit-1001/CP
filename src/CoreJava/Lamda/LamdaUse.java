@@ -27,5 +27,7 @@ public class LamdaUse {
         Stream<Employee> res = l.stream().distinct().filter(e -> e.getSalary()>100);
 
         res.forEach(name -> System.out.println(name.getFirstName()+" "+name.getSalary()));
+
+
     }
 }

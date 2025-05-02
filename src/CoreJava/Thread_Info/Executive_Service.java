@@ -19,12 +19,17 @@ public class Executive_Service implements Runnable{
 
     public static void main(String[] args) {
         // creates thread pool
-        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
 
-        executorService.submit(new Executive_Service());
+        Executive_Service obj1  = new Executive_Service();
+        Executive_Service obj2  = new Executive_Service();
+        Executive_Service obj3  = new Executive_Service();
 
-        executorService.submit(new Executive_Service());
+        executorService.submit(obj1);
+        executorService.submit(obj2);
+        executorService.submit(obj3);
 
         executorService.shutdown();
+
     }
 }
